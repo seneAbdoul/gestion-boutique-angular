@@ -1,0 +1,27 @@
+<app-layout></app-layout>
+<div class="ping p-16 bg-gray-100 overflow-hidden" style="width: 90em;height: 50em; margin-left: 15%;">
+    <div class="flex justify-between items-center mb-4 mt-16">
+      <h1 class="text-2xl font-bold">Approvisionnement</h1>
+      <button
+        class="btn bg-blue-800 text-white rounded px-4 py-2"
+        (click)="openModal()"  
+      >
+        Nouvelle Article
+      </button>
+    </div>
+  
+    <div class="flex">
+      <div class="ml-4" style="width: 44em;">
+        <app-article-liste (articleSelectionChange)="approComponent.onArticleSelectionChange($event)"></app-article-liste>
+      </div>
+      <div class="ml-4" style="width: 44em;">
+        <app-article-appro #approComponent></app-article-appro>
+      </div>
+    </div>
+  
+    <!-- Modal contenant le formulaire -->
+    <app-modal [showModal]="showModal" (closeModal)="closeModal()">
+      <app-article-form (onClose)="closeModal()" (onArticleAdded)="closeModal()"></app-article-form>
+    </app-modal>
+  </div>
+  

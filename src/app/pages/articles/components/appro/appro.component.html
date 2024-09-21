@@ -1,0 +1,34 @@
+<div class="p-4 bg-white rounded-lg shadow-md">
+    <div class="text-lg font-bold mb-4">Liste de produits sélectionnés</div>
+    <table class="w-full text-left border-collapse">
+      <thead class="bg-blue-800 text-white">
+        <tr>
+          <th class="border px-4 py-2">Article</th>
+          <th class="border px-4 py-2">Prix</th>
+          <th class="border px-4 py-2">Quantité</th>
+          <th class="border px-4 py-2">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let article of selectedArticles; let i = index">
+          <td class="border px-4 py-2">{{ article.libelle }}</td>
+          <td class="border px-4 py-2">{{ article.prix }} FCFA</td>
+          <td class="border px-4 py-2 flex items-center">
+            <button class="px-2 bg-gray-200 rounded" (click)="decrement(i)">-</button>
+            <span class="px-2">{{ quantities[i] }}</span>
+            <button class="px-2 bg-gray-200 rounded" (click)="increment(i)">+</button>
+          </td>
+          <td class="border px-4 py-2 text-red-500 cursor-pointer" (click)="removeArticle(article, i)">
+            Supprimer
+          </td>
+        </tr>
+        <tr *ngIf="selectedArticles.length === 0">
+          <td class="border px-4 py-2 text-center" colspan="4">Aucune sélection</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="mt-4">
+      <button class="px-4 py-2 bg-blue-500 text-white rounded" (click)="save()">SAVE</button>
+    </div>
+  </div>
+  

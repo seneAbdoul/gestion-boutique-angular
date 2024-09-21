@@ -1,0 +1,7 @@
+<div *ngIf="showModal" class="fixed inset-0 flex items-center justify-center z-50">
+    <div class="fixed inset-0 bg-gray-800 opacity-50"></div>
+    <div class="bg-white p-8 rounded-lg shadow-lg z-10" style="width: 40em;">
+      <button (click)="onClose()" class="btn bg-red-500 text-white rounded px-4 py-2 mb-4">Fermer</button>
+      <app-article-form></app-article-form>
+    </div>
+  </div>

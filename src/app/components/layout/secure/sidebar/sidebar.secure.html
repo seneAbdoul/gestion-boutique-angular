@@ -1,0 +1,48 @@
+<div class="fixed top-0 left-0 z-20 w-64 h-full text-white flex flex-col transition-transform transform lg:translate-x-0 translate-x-0"
+     style="background: linear-gradient(to right, #1E3A8A, #0F172A)">
+  <div class="flex items-center justify-center h-16 bg-blue-800">
+    <mat-icon>store</mat-icon> <!-- Icône Material -->
+    <h3 class="text-2xl font-bold ml-3">GESTION BOUTIQUE</h3>
+  </div>
+
+  <nav class="flex-grow mt-10">
+    <ul class="space-y-4">
+      <li>
+        <a [routerLink]="'/dashboard'" routerLinkActive="active" class="flex items-center px-6 py-6 border-b border-gray-700 hover:bg-blue-700">
+          <mat-icon class="mr-4">home</mat-icon> <!-- Icône Material -->
+          DASHBOARD
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/dette'" routerLinkActive="active" class="flex items-center px-6 py-4 border-b border-gray-700 hover:bg-blue-700">
+          <mat-icon class="mr-4">attach_money</mat-icon> <!-- Icône Material -->
+          DETTES
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/boutique/article'" routerLinkActive="active" class="flex items-center px-6 py-6 border-b border-gray-700 hover:bg-blue-700">
+          <mat-icon class="mr-4">inventory</mat-icon> <!-- Icône Material -->
+          ARTICLES
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/boutique/client'" routerLinkActive="active" class="flex items-center px-6 py-6 border-b border-gray-700 hover:bg-blue-700">
+          <mat-icon class="mr-4">group</mat-icon> <!-- Icône Material -->
+          CLIENTS
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/demande'" routerLinkActive="active" class="flex items-center px-6 py-6 border-b border-gray-700 hover:bg-blue-700">
+          <mat-icon class="mr-4">attach_money</mat-icon> <!-- Icône Material -->
+          DEMANDES
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="'/admin'" routerLinkActive="active" class="flex items-center px-6 py-4 border-b border-gray-700 hover:bg-blue-700">
+          <mat-icon class="mr-4">group</mat-icon> <!-- Icône Material -->
+          UTILISATEURS
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

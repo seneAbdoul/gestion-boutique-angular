@@ -1,0 +1,84 @@
+<div class="p-4 bg-white rounded-lg shadow-md">
+    <h2 class="text-lg font-bold mb-4">Ajouter un Nouvel Article</h2>
+  
+    <form #articleForm="ngForm" (ngSubmit)="onSubmit(articleForm)">
+      <!-- Libellé -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Libellé</label>
+        <input
+          type="text"
+          name="libelle"
+          [(ngModel)]="article.libelle"
+          class="border border-gray-300 rounded px-4 py-2 w-full"
+          required
+        />
+      </div>
+  
+      <!-- Prix -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Prix</label>
+        <input
+          type="number"
+          name="prix"
+          [(ngModel)]="article.prix"
+          class="border border-gray-300 rounded px-4 py-2 w-full"
+          required
+        />
+      </div>
+  
+      <!-- Quantité en stock -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Quantité en stock</label>
+        <input
+          type="number"
+          name="quantiteStock"
+          [(ngModel)]="article.quantiteStock"
+          class="border border-gray-300 rounded px-4 py-2 w-full"
+          required
+        />
+      </div>
+  
+      <!-- Promotion -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Promotion</label>
+        <input
+          type="text"
+          name="promotion"
+          [(ngModel)]="article.promotion"
+          class="border border-gray-300 rounded px-4 py-2 w-full"
+        />
+      </div>
+  
+      <!-- Prix Détail -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Prix Détail</label>
+        <input
+          type="number"
+          name="prixDetail"
+          [(ngModel)]="article.prixDetail"
+          class="border border-gray-300 rounded px-4 py-2 w-full"
+        />
+      </div>
+  
+      <!-- Catégorie -->
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700">Catégorie</label>
+        <select
+          name="categorieId"
+          [(ngModel)]="selectedCategorieId"
+          class="border border-gray-300 rounded px-4 py-2 w-full"
+          required
+        >
+          <option value="">Sélectionner une catégorie</option>
+          <option *ngFor="let categorie of categories" [value]="categorie.id">
+            {{ categorie.libelle }}
+          </option>
+        </select>
+      </div>
+  
+      <!-- Boutons -->
+      <button type="button" class="btn bg-gray-500 text-white rounded" style="width: 6em; height: 2em;" (click)="articleForm.reset()">Annuler</button>
+      <button type="submit" class="btn bg-blue-500 text-white ml-2 rounded" style="width: 6em; height: 2em;">Ajouter</button>
+    </form>
+  </div>
+  

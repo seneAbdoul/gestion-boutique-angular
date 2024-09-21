@@ -1,0 +1,76 @@
+<div class="font-[sans-serif]" style="width: 60%; margin-left: 20%; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1)">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 items-center gap-4 h-full" style="width: 80%;">
+      <div class="max-md:order-1 lg:col-span-2 md:h-screen w-full bg-[#000842] md:rounded-tr-xl md:rounded-br-xl lg:p-12 p-8">
+        <img src="https://readymadeui.com/signin-image.webp" class="lg:w-[70%] w-full h-full object-contain block mx-auto" alt="login-image" />
+      </div>
+  
+      <div class="w-full p-6" style="width: 30em;">
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="mb-8">
+            <h3 class="text-gray-800 text-3xl font-extrabold">Connexion</h3>
+            <p class="text-sm mt-4 text-gray-800">Pas encore de compte ? <a href="javascript:void(0);" class="text-blue-600 font-semibold hover:underline ml-1 whitespace-nowrap">Inscrivez-vous ici</a></p>
+          </div>
+  
+          <div class="form-group">
+            <label class="text-gray-800 text-[15px] mb-2 block">Email</label>
+            <div class="relative flex items-center">
+              <input type="email" formControlName="mail" class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600" placeholder="Entrez votre email">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4" viewBox="0 0 682.667 682.667">
+                <!-- SVG content for email icon -->
+              </svg>
+            </div>
+            <div *ngIf="loginForm.get('mail')?.invalid && loginForm.get('mail')?.touched" class="error text-red-500">
+              L'adresse email est requise et doit être valide.
+            </div>
+          </div>
+  
+          <div class="mt-4">
+            <label class="text-gray-800 text-[15px] mb-2 block">Mot de passe</label>
+            <div class="relative flex items-center">
+              <input type="password" formControlName="password" class="w-full text-sm text-gray-800 bg-gray-100 focus:bg-transparent px-4 py-3.5 rounded-md outline-blue-600" placeholder="Entrez votre mot de passe">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="w-[18px] h-[18px] absolute right-4 cursor-pointer" viewBox="0 0 128 128">
+                <!-- SVG content for password icon -->
+              </svg>
+            </div>
+            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error text-red-500">
+              Le mot de passe doit comporter au moins 6 caractères.
+            </div>
+          </div>
+  
+          <div class="flex flex-wrap items-center justify-between gap-4 mt-4">
+            <div class="flex items-center">
+              <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 shrink-0 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-md" />
+              <label for="remember-me" class="ml-3 block text-sm">
+                Se souvenir de moi
+              </label>
+            </div>
+            <div>
+              <a href="javascript:void(0);" class="text-blue-600 font-semibold text-sm hover:underline">
+                Mot de passe oublié ?
+              </a>
+            </div>
+          </div>
+  
+          <div class="mt-8">
+            <button type="submit" [disabled]="loginForm.invalid" class="w-full py-3 px-6 text-sm tracking-wide rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none">
+              Se connecter
+            </button>
+          </div>
+  
+          <div class="my-4 flex items-center gap-4">
+            <hr class="w-full border-gray-300" />
+            <p class="text-sm text-gray-800 text-center">ou</p>
+            <hr class="w-full border-gray-300" />
+          </div>
+  
+          <button type="button" class="w-full flex items-center justify-center gap-4 py-3 px-6 text-sm tracking-wide text-gray-800 border border-gray-300 rounded-md bg-gray-50 hover:bg-gray-100 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px" class="inline" viewBox="0 0 512 512">
+              <!-- SVG content for Google icon -->
+            </svg>
+            Continuer avec Google
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
